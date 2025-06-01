@@ -25,6 +25,7 @@ export async function POST(req: NextRequest) {
                         firstName: first_name,
                         lastName: last_name,
                         imageUrl: image_url,
+                        credits: 0,
                     },
                     update: {
                         email: primaryEmail,

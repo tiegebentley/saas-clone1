@@ -110,6 +110,9 @@ export default function Navbar() {
                                     </Button>
                                 </SignedOut>
                                 <SignedIn>
+                                    <Button className='rounded-full' asChild>
+                                        <Link href="/dashboard">Dashboard</Link>
+                                    </Button>
                                     <UserButton />
                                 </SignedIn>
                                 <div className='hidden lg:flex'>

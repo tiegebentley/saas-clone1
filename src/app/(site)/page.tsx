@@ -46,7 +46,7 @@ export default function Home() {
             <FeaturesSectionDemo />
           </div>
 
-          <div className="py-4">
+          <div className="py-4" id="pricing">
             <Pricing />
           </div>
 

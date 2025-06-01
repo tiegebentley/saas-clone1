@@ -43,7 +43,7 @@ const FAQ = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
-                    className="text-2xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-7xl leading-tight drop-shadow-lg px-4 text-center"
+                    className="text-2xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-5xl leading-tight drop-shadow-lg px-4 text-center"
                 >
                     Frequently Asked Questions
                 </motion.h4>

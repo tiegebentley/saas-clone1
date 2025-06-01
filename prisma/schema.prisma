@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
   output   = "../src/generated/prisma"
@@ -16,29 +10,38 @@ datasource db {
 }
 
 model User {
-  id        String   @id // Clerk user ID
-  email     String   @unique
-  firstName String?
-  lastName  String?
-  imageUrl  String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  credits   Int
-
+  id            String         @id
+  email         String         @unique
+  firstName     String?
+  lastName      String?
+  imageUrl      String?
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  credits       Int
   subscriptions Subscription[]
 }
 
 model Subscription {
-  id     String @id // Stripe subscription ID
-  userId String
-  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id               String          @id @default(uuid())
+  userId           String
+  stripeCustomerId String
+  priceId          String
+  isActive         Boolean         @default(true)
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+  interval         BillingInterval @default(MONTH)
+  planType         PlanType        @default(STARTER)
+  user             User            @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  stripeCustomerId   String    @unique
-  priceId            String
-  isActive           Boolean   @default(false)
-  currentPeriodStart DateTime
-  currentPeriodEnd   DateTime
-  canceledAt         DateTime?
-  createdAt          DateTime  @default(now())
-  updatedAt          DateTime  @updatedAt
+  @@index([userId])
+}
+
+enum PlanType {
+  STARTER
+  PRO
+}
+
+enum BillingInterval {
+  MONTH
+  YEAR
 }

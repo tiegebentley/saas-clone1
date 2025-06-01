@@ -14,9 +14,9 @@ export async function POST(req: Request) {
     try {
         const { userId } = await auth();
         const user = await currentUser();
-        console.log('User ID:', userId);
-        console.log('Current User:', user);
-        console.log('Customer Email:', user?.emailAddresses[0]?.emailAddress);
+        // console.log('User ID:', userId);
+        // console.log('Current User:', user);
+        // console.log('Customer Email:', user?.emailAddresses[0]?.emailAddress);
 
         if (!userId) {
             const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
@@ -27,7 +27,7 @@ export async function POST(req: Request) {
         }
 
         const body = await req.json();
-        console.log('Request body:', body);
+        // console.log('Request body:', body);
 
         const { priceId } = body;
 
@@ -51,12 +51,13 @@ export async function POST(req: Request) {
                         quantity: 1,
                     },
                 ],
-                customer_email: user?.emailAddresses[0]?.emailAddress,
+                customer_email: user?.emailAddresses[0]?.emailAddress || undefined,
+                client_reference_id: userId,
                 metadata: {
-                    userId: user?.id,
+                    userId: userId
                 },
-                success_url: `${process.env.NEXT_PUBLIC_APP_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
-                cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/#pricing`,
+                success_url: `${baseUrl}/success?session_id={CHECKOUT_SESSION_ID}`,
+                cancel_url: `${baseUrl}/#pricing`,
             });
 
             if (!session.url) {
