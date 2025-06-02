@@ -1,6 +1,6 @@
-// import { currentUser } from "@clerk/nextjs/server";
-// import { redirect } from "next/navigation";
-// import { prisma } from "@/lib/prisma";
+import { currentUser } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
+import { prisma } from "@/lib/prisma";
 
 // export type SubscriptionStatus = {
 //     isActive: boolean;
@@ -33,18 +33,28 @@
 //     };
 // }
 
-// export async function requireSubscription() {
-//     const user = await currentUser();
+export async function requireSubscription() {
+    const user = await currentUser();
 
-//     if (!user) {
-//         redirect("/sign-in");
-//     }
+    if (!user) {
+        redirect("/sign-in");
+    }
 
-//     const subscription = await getUserSubscription(user.id);
+    try {
+        const subscription = await prisma.subscription.findFirst({
+            where: {
+                userId: user.id,
+                isActive: true
+            }
+        });
 
-//     if (!subscription.isActive) {
-//         redirect("/#pricing");
-//     }
+        if (!subscription) {
+            redirect("/#pricing");
+        }
 
-//     return subscription;
-// }
+        return subscription;
+    } catch (error) {
+        console.error("Subscription check error:", error);
+        redirect("/#pricing");
+    }
+}
