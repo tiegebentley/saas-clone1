@@ -1,5 +1,8 @@
-// @ts-nocheck
 import { PrismaClient } from '../../src/generated/prisma';
+
+declare global {
+    var prisma: PrismaClient | undefined;
+}
 
 let prisma: PrismaClient;
 
