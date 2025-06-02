@@ -1,5 +1,6 @@
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import { prisma } from "@/lib/prisma";
 
 export type SubscriptionStatus = {
     isActive: boolean;
@@ -8,13 +9,27 @@ export type SubscriptionStatus = {
 };
 
 export async function getUserSubscription(userId: string): Promise<SubscriptionStatus> {
-    // TODO: Replace with your real subscription check (e.g., query your DB or Stripe)
-    // This is a mock implementation that simulates checking a specific user's subscription
-    console.log(`Checking subscription for user: ${userId}`);
+    // Get the most recent active subscription from the database
+    const subscription = await prisma.subscription.findFirst({
+        where: {
+            userId,
+            isActive: true
+        },
+        orderBy: {
+            createdAt: 'desc'
+        }
+    });
+
+    if (!subscription) {
+        return {
+            isActive: false
+        };
+    }
+
     return {
         isActive: true,
-        plan: "pro",
-        expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000) // 30 days from now
+        plan: subscription.planType,
+        expiresAt: subscription.updatedAt // Using updatedAt as a proxy for expiration
     };
 }
 
@@ -28,7 +43,7 @@ export async function requireSubscription() {
     const subscription = await getUserSubscription(user.id);
 
     if (!subscription.isActive) {
-        redirect("/pricing");
+        redirect("/#pricing");
     }
 
     return subscription;
