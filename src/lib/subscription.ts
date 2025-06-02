@@ -9,7 +9,8 @@ export type SubscriptionStatus = {
 
 export async function getUserSubscription(userId: string): Promise<SubscriptionStatus> {
     // TODO: Replace with your real subscription check (e.g., query your DB or Stripe)
-    // This is a mock implementation
+    // This is a mock implementation that simulates checking a specific user's subscription
+    console.log(`Checking subscription for user: ${userId}`);
     return {
         isActive: true,
         plan: "pro",

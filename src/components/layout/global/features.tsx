@@ -136,13 +136,13 @@ export const SkeletonThree = () => {
             <div className="w-full mx-auto bg-transparent dark:bg-transparent group h-full">
                 <div className="flex flex-1 w-full h-full flex-col space-y-2 relative items-center justify-center">
                     <IconBrandYoutubeFilled className="h-20 w-20 absolute z-10 text-red-500" />
-                    <img
+                    <Image
                         src="/starter.png"
                         alt="header"
                         width={800}
                         height={800}
                         className="h-full w-full aspect-square object-cover object-center rounded-sm blur-none group-hover/image:blur-md transition-all duration-200"
-                    />
+                    ></Image>
                 </div>
             </div>
         </a>
@@ -185,13 +185,13 @@ export const SkeletonTwo = () => {
                         whileTap="whileTap"
                         className="rounded-xl -mr-4 mt-4 p-1 bg-white dark:bg-neutral-800 dark:border-neutral-700 border border-neutral-100 shrink-0 overflow-hidden"
                     >
-                        <img
+                        <Image
                             src={image}
                             alt="bali images"
                             width="500"
                             height="500"
                             className="rounded-lg h-20 w-20 md:h-40 md:w-40 object-cover shrink-0"
-                        />
+                        ></Image>
                     </motion.div>
                 ))}
             </div>
@@ -207,13 +207,13 @@ export const SkeletonTwo = () => {
                         whileTap="whileTap"
                         className="rounded-xl -mr-4 mt-4 p-1 bg-white dark:bg-neutral-800 dark:border-neutral-700 border border-neutral-100 shrink-0 overflow-hidden"
                     >
-                        <img
+                        <Image
                             src={image}
                             alt="bali images"
                             width="500"
                             height="500"
                             className="rounded-lg h-20 w-20 md:h-40 md:w-40 object-cover shrink-0"
-                        />
+                        ></Image>
                     </motion.div>
                 ))}
             </div>

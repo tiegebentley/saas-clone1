@@ -3,7 +3,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
-import { cn } from '@/lib/utils';
 import { Button } from "@/components/ui/button";
 
 const CTA = () => {

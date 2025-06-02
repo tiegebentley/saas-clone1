@@ -3,7 +3,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Github, Twitter, Linkedin, Mail, ArrowUpRight } from 'lucide-react';
-import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
 const Footer = () => {

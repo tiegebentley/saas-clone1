@@ -1,12 +1,12 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
-export default function SuccessPage() {
+function SuccessPageContent() {
     const [status, setStatus] = useState<'loading' | 'success' | 'error'>('loading');
     const searchParams = useSearchParams();
     const router = useRouter();
@@ -130,5 +130,20 @@ export default function SuccessPage() {
                 </div>
             </div>
         </div>
+    );
+}
+
+export default function SuccessPage() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900">
+                <div className="text-center">
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 dark:border-blue-400 mx-auto"></div>
+                    <h1 className="mt-4 text-2xl font-bold text-gray-900 dark:text-white">Loading...</h1>
+                </div>
+            </div>
+        }>
+            <SuccessPageContent />
+        </Suspense>
     );
 } 

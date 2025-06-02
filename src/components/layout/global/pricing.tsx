@@ -132,7 +132,7 @@ const Pricing = () => {
                     transition={{ duration: 0.5, delay: 0.1 }}
                     className="mt-4 text-sm sm:text-base leading-7 max-w-2xl mx-auto px-6 text-center"
                 >
-                    Choose the plan that's right for you
+                    Choose the plan that is right for you
                 </motion.p>
 
                 {/* Billing Toggle */}
