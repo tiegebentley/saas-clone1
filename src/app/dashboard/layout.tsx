@@ -1,9 +1,9 @@
 import React from 'react'
 import SidebarDashboard from '@/components/layout/private/sidebarDashboard'
-import { requireSubscription } from '@/lib/subscription'
+// import { requireSubscription } from '@/lib/subscription'
 
 const Layout = async ({ children }: { children: React.ReactNode }) => {
-    await requireSubscription();
+    // await requireSubscription();
 
     return (
         <div className="flex h-screen">
