@@ -12,11 +12,11 @@ const PLANS = {
         name: "Starter",
         monthly: {
             price: 29,
-            priceId: "price_1RUwbHGwUnBOuV2zz2vsmQle"
+            priceId: "price_1RobIG0RwVVfQCyFeCUVJYt6"
         },
         yearly: {
             price: 290,
-            priceId: "price_1RUwc6GwUnBOuV2zPxlrt8mH"
+            priceId: "price_1RobIs0RwVVfQCyFvlgwWrn1"
         },
         features: [
             "Up to 5 projects",
@@ -29,11 +29,11 @@ const PLANS = {
         name: "Pro",
         monthly: {
             price: 99,
-            priceId: "price_1RUwc6GwUnBOuV2z3q4YEHeT"
+            priceId: "price_1RobJF0RwVVfQCyFwbEuEmtA"
         },
         yearly: {
             price: 990,
-            priceId: "price_1RUwc6GwUnBOuV2zOd9tXPnw"
+            priceId: "price_1RobJa0RwVVfQCyFRfEMGknA"
         },
         features: [
             "Unlimited projects",
