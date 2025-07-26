@@ -15,7 +15,7 @@ const Hero = () => {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="text-2xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-7xl leading-tight drop-shadow-lg px-4"
                 >
-                    <span className="block">Dorian AI Community</span>
+                    <span className="block">Second Brain Community</span>
                     <span className="block mt-2">Make Money With AI</span>
                 </motion.h1>
 
@@ -25,7 +25,7 @@ const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                     className="mt-4 text-sm sm:text-base leading-7 text-gray-200 max-w-2xl mx-auto px-4"
                 >
-                    Join the Dorian AI Community and stay at the cutting-edge of technology. Building cool things with state-of-the-art tools.
+                    Join the Second Brain Community and stay at the cutting-edge of technology. Building cool things with state-of-the-art tools.
                 </motion.p>
 
                 <motion.div

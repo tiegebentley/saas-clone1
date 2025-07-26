@@ -48,7 +48,7 @@ export default function Navbar() {
                             </div>
                             <div className='hidden md:block mx-1 text-2xl font-bold'>
                                 <Link href='/'>
-                                    <p>Dorian AI</p>
+                                    <p>Second Brain</p>
                                 </Link>
                             </div>
                         </div>

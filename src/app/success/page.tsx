@@ -81,7 +81,7 @@ function SuccessPageContent() {
                 <CheckCircle2 className="w-16 h-16 text-green-600 dark:text-green-400 mx-auto mb-8 drop-shadow-md" />
 
                 <h1 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white drop-shadow-sm">
-                    Welcome to Dorian AI! 🎉
+                    Welcome to Second Brain! 🎉
                 </h1>
 
                 <p className="text-lg md:text-xl text-gray-700 dark:text-gray-200 mb-8">

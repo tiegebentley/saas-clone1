@@ -44,7 +44,7 @@ const SidebarDashboard = () => {
                 }`}
         >
             <div className="flex items-center justify-between p-4 border-b border-neutral-200 dark:border-neutral-800">
-                {!collapsed && <h2 className="text-xl font-bold">DorianAI</h2>}
+                {!collapsed && <h2 className="text-xl font-bold">Second Brain</h2>}
                 <button
                     onClick={toggleSidebar}
                     className="p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"

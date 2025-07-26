@@ -1,4 +1,4 @@
-This is a Viral SaaS Starter Kit by Dorian AI.
+This is a Viral SaaS Starter Kit by Second Brain.
 
 ## Getting Started
 

@@ -6,7 +6,7 @@ import { Search, Send } from 'lucide-react';
 const mockMessages = [
     {
         id: 1,
-        sender: 'Dorian AI',
+        sender: 'Second Brain',
         message: 'Hello! How can I assist you today?',
         timestamp: '10:30 AM',
         isAI: true
@@ -20,7 +20,7 @@ const mockMessages = [
     },
     {
         id: 3,
-        sender: 'Dorian AI',
+        sender: 'Second Brain',
         message: 'Of course! I\'d be happy to help. Could you provide more details about your project?',
         timestamp: '10:31 AM',
         isAI: true

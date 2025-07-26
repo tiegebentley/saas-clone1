@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SaaS Starter By Dorian AI",
+  title: "SaaS Starter By Second Brain",
   description: "Get Started in Minutes",
 };
 

@@ -67,7 +67,7 @@ const Footer = () => {
                     >
                         <div className="flex items-center space-x-2">
                             <h2 className="text-2xl font-bold bg-gradient-to-r from-zinc-900 to-zinc-600 dark:from-zinc-100 dark:to-zinc-400 bg-clip-text text-transparent">
-                                Dorian AI
+                                Second Brain
                             </h2>
                         </div>
                         <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
@@ -143,7 +143,7 @@ const Footer = () => {
                 >
                     <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                         <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                            © {currentYear} Dorian AI. All rights reserved.
+                            © {currentYear} Second Brain. All rights reserved.
                         </p>
                         <div className="flex space-x-8">
                             <Link
